@@ -9,7 +9,12 @@
   </head>
   <body>
     <section class="container">
-        <div class="card-box col-12 col-md-6 mx-auto">
+        <div class="card-box col-12 col-md-6 my-5 mx-auto p-3 shadow shadow-md align-item-center bg-white">
+          <div class="text-center">
+            <h3>WELCOME BACK!</h3>
+            <small>Don't have an account? <a href="#">Sign up</a></small>
+          </div><br>
+          <form action="scripts.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">User Name</label>
                 <input type="text" name="username" id="username" class="form-control" placeholder="Add Your User Name" min="4" max="50" required>
@@ -20,6 +25,7 @@
             </div>
             <a href="#">Forgot your password?</a><br><br>
             <button type="submit" class="btn btn-primary col-12">Sign In</button>
+          </form>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
