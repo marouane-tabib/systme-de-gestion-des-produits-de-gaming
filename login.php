@@ -1,4 +1,4 @@
-<?php $title ="Login"; include"includes/layouts/header.php" ?>
+<?php $title ="Login"; include"includes/components/header.php" ?>
         <div class="card-box col-12 col-md-5 my-5 mx-auto p-3 shadow shadow-md align-item-center bg-white">
           <div class="text-center">
             <h3>WELCOME BACK!</h3>
@@ -17,4 +17,4 @@
             <button type="submit" name="login" class="btn btn-primary col-12">Sign In</button>
           </form>
         </div>
-<?php include"includes/layouts/footer.php" ?>
+<?php include"includes/components/footer.php" ?>

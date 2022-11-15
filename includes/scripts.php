@@ -10,7 +10,18 @@
     if(isset($_POST['delete']))      deleteTask($conn);
 
     function login($conn){
-        echo "login";
+        $username = $_POST['username'];
+        $password = md5($_POST['password']);
+        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            return $result;
+        } else {
+                echo "0 results";
+        } 
+        $conn->close();
     }
     function getTasks($conn , $q)
     {

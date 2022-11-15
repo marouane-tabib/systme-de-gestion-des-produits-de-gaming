@@ -5,13 +5,13 @@
     
     //--- Header include
     $title = "Home";
-    include"includes/layouts/header.php";
+    include"includes/components/header.php";
 
     //--- Body includes
-      include"includes/layouts/logo.php"; 
-      include"includes/layouts/model.php"; 
-      include"includes/layouts/table.php";
+      include"includes/components/logo.php"; 
+      include"includes/components/model.php"; 
+      include"includes/components/table.php";
 
     //--- Footer include
-    include"includes/layouts/footer.php"
+    include"includes/components/footer.php"
   ?>
