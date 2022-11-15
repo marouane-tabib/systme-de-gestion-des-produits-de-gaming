@@ -13,3 +13,14 @@
   </head>
   <body>
     <section class="container">
+      
+			<?php if (isset($_SESSION['message'])): ?>
+				<div class="alert alert-green alert-dismissible fade show">
+				<strong>Success!</strong>
+					<?php 
+						echo $_SESSION['message']; 
+						unset($_SESSION['message']);
+					?>
+					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
+				</div>
+			<?php endif ?>
