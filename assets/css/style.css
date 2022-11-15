@@ -1,6 +1,10 @@
 body{
 background-color: #f7f7f7;
 }
+a , a:hover{
+    color: black;
+    text-decoration: none;
+}
 .logo{
   background-color: #ffff0e;
   display: inline;
@@ -8,8 +12,8 @@ background-color: #f7f7f7;
   padding: 2px 5px;
   box-shadow: 0.7px 1px 4px #5557;
 }
-.logo::first-letter{
-  color:red;font-size:2rem;font-weight:bold;
+.g{
+    color:red;font-size:2rem;font-weight:bold;
 }
 .card-box{
     background-color: #ededed;
