@@ -5,10 +5,13 @@
     session_start();
 
     //ROUTING
-    if(isset($_POST['save']))        saveTask($conn);
+    if(isset($_POST['login']))        login($conn);
     if(isset($_POST['update']))      updateTask($conn);
     if(isset($_POST['delete']))      deleteTask($conn);
 
+    function login($conn){
+        echo "login";
+    }
     function getTasks($conn , $q)
     {
             $sql = "SELECT  * FROM tasks WHERE status = '$q'";

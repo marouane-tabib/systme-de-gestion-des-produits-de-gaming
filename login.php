@@ -4,7 +4,7 @@
             <h3>WELCOME BACK!</h3>
             <small>Don't have an account? <a href="#">Sign up</a></small>
           </div><br>
-          <form action="scripts.php" method="POST">
+          <form action="includes/scripts.php" method="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">User Name</label>
                 <input type="text" name="username" id="username" class="form-control" placeholder="Add Your User Name" min="4" max="50" required>
@@ -14,7 +14,7 @@
                 <input type="password" name="password" id="password" class="form-control" placeholder="******" min="8" max="50" required>
             </div>
             <a href="#">Forgot your password?</a><br><br>
-            <button type="login" class="btn btn-primary col-12">Sign In</button>
+            <button type="submit" name="login" class="btn btn-primary col-12">Sign In</button>
           </form>
         </div>
 <?php include"includes/layouts/footer.php" ?>

@@ -2,6 +2,7 @@
     // Redirect
     session_start();
     if(!$_SESSION['user']){ header('location:login.php'); }
+    
     //--- Header include
     $title = "Home";
     include"includes/layouts/header.php";
