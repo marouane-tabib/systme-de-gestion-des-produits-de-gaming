@@ -11,7 +11,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="index.php" method="post">
+      <form action="scripts.php" method="post">
         <div class="modal-body">
             <div class="mb-3">
               <label for="img_url" class="form-label">Image URL</label>
