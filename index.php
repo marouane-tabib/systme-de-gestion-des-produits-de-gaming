@@ -1,8 +1,4 @@
-<?php
-    // Redirect
-    session_start();
-    if(!$_SESSION['user']){ header('location:login.php'); }
-    
+<?php   
     //--- Header include
     $title = "Home";
     include"includes/components/header.php";

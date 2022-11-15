@@ -1,5 +1,7 @@
 <?php 
     include('includes/scripts.php');
+    // Redirect
+    if(!$_SESSION['user']){ header('location:login.php'); }
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,7 +15,7 @@
   </head>
   <body>
     <section class="container">
-      
+
 			<?php if (isset($_SESSION['message'])): ?>
 				<div class="alert alert-green alert-dismissible fade show">
 				<strong>Success!</strong>
