@@ -8,20 +8,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-<style>
-  .logo{
-    background-color: #ffff0e;
-    display: inline;
-    border-bottom: red 3px solid;
-    padding: 2px 5px;
-    box-shadow: 0.7px 1px 4px #5557;
-  }
-  .g{
-    color:red;font-size:2rem;font-weight:bold;
-  }
-</style>
     <section class="container">
-        <h1 class="h3 logo"><span class="g">G</span>aming</h1><br>
+        <h1 class="h3 logo">Gaming</h1><br>
         <?php include"includes/layouts/model.php" ; include"includes/layouts/table.php"; ?>
     </section>
 

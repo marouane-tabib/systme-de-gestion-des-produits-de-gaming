@@ -1,6 +1,16 @@
 body{
 background-color: #f7f7f7;
 }
+.logo{
+  background-color: #ffff0e;
+  display: inline;
+  border-bottom: red 3px solid;
+  padding: 2px 5px;
+  box-shadow: 0.7px 1px 4px #5557;
+}
+.logo::first-letter{
+  color:red;font-size:2rem;font-weight:bold;
+}
 .card-box{
     background-color: #ededed;
     border-radius: 5px;
