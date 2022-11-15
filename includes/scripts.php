@@ -11,17 +11,34 @@
 
     function login($conn){
         $username = $_POST['username'];
-        $password = md5($_POST['password']);
-        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $password = $_POST['password'];
 
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            return $result;
-        } else {
-                echo "0 results";
-        } 
-        $conn->close();
+        // Patterns ...
+        $passPattern = '/^[a-zA-Z][0-9a-zA-Z_]{2,23}[0-9a-zA-Z]$/';
+        $usernamePattern = '/^[a-z\d_]{5,20}$/i';
+        
+        
+        if(preg_match($usernamePattern, $username) && preg_match($passPattern, $password)){
+            echo 'Valid name given.';
+            $password = md5($password);
+            $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    
+            $result = $conn->query($sql);
+    
+            if ($result->num_rows > 0) {
+                $_SESSION['message'] = "WELCOME BACK ! Login Success ... ";
+                $_SESSION['user'] = "WELCOME BACK ! Login Success ... ";
+                header("location:../index.php");
+                // return $result;
+            } else {
+                $_SESSION['message'] = "No recorde register , check your password or username";
+                header("location:../login.php");
+            } 
+            $conn->close();
+        }else{
+            $_SESSION['message'] = "Please check your information";
+            header("location:../login.php");
+        }
     }
     function getTasks($conn , $q)
     {
