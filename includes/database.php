@@ -4,7 +4,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "youcode_tableauscrumbackend";
+    $dbname = "youcode_gestiongamingproduit";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password , $dbname);
