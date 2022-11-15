@@ -1,4 +1,7 @@
-<?php $title ="Login"; include"includes/components/header.php" ?>
+<?php
+    $title ="Login"; include"includes/components/header.php" ;
+    if($_SESSION['user']){ header('location:index.php'); die(); }
+?>
         <div class="card-box col-12 col-md-5 my-5 mx-auto p-3 shadow shadow-md align-item-center bg-white">
           <div class="text-center">
             <h3>WELCOME BACK!</h3>
