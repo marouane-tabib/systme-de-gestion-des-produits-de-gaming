@@ -9,7 +9,7 @@
   </head>
   <body>
     <section class="container">
-        <div class="card-box col-12 col-md-6 my-5 mx-auto p-3 shadow shadow-md align-item-center bg-white">
+        <div class="card-box col-12 col-md-5 my-5 mx-auto p-3 shadow shadow-md align-item-center bg-white">
           <div class="text-center">
             <h3>WELCOME BACK!</h3>
             <small>Don't have an account? <a href="#">Sign up</a></small>
