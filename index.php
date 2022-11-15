@@ -9,7 +9,6 @@
   </head>
   <body>
     <section class="container">
-        <h1 class="h3 logo"><a href="index.php"><span class="g">G</span>aming</a></h1><br>
         <?php include"includes/layouts/model.php" ; include"includes/layouts/table.php"; ?>
     </section>
 
