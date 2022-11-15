@@ -19,7 +19,6 @@
         
         
         if(preg_match($usernamePattern, $username) && preg_match($passPattern, $password)){
-            echo 'Valid name given.';
             $password = md5($password);
             $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     
@@ -27,9 +26,8 @@
     
             if ($result->num_rows > 0) {
                 $_SESSION['message'] = "WELCOME BACK ! Login Success ... ";
-                $_SESSION['user'] = "WELCOME BACK ! Login Success ... ";
+                $_SESSION['user'] = $result->fetch_assoc();
                 header("location:../index.php");
-                // return $result;
             } else {
                 $_SESSION['message'] = "No recorde register , check your password or username";
                 header("location:../login.php");
