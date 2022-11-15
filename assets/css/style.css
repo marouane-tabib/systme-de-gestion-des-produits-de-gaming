@@ -1,10 +1,10 @@
 body{
 background-color: #f7f7f7;
 }
-a , a:hover{
+/* :hover{
     color: black;
     text-decoration: none;
-}
+} */
 .logo{
   background-color: #ffff0e;
   display: inline;
