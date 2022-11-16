@@ -55,6 +55,7 @@
         }
     }
     function addProduct($conn){
+        include"tools/insertImage.php";
         //CODE HERE
             // Variables
                 $name = $_POST['name'];
@@ -62,6 +63,8 @@
                 $platform_id = $_POST['platform'];
                 $price = $_POST['price'];
                 $description = $_POST['description'];
+            // Action
+                $image = 
         //SQL INSERT
             // Action
                 $sql = "INSERT INTO products(`user_id`, `name`, `quantity`, `platform_id`, `price`, `description`) 

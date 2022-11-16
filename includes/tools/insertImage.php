@@ -1,5 +1,5 @@
 <?php 
- function inserImage($file){
+ function insertImage($file){
     if(!empty($file["image"]["name"])) { 
         // Get file info 
         $fileName = basename($file["image"]["name"]); 
