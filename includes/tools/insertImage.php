@@ -1,5 +1,6 @@
 <?php 
  function insertImage($file){
+    $imgContent = null;
     if(!empty($file["image"]["name"])) { 
         // Get file info 
         $fileName = basename($file["image"]["name"]); 
@@ -16,7 +17,7 @@
     }else{ 
         $statusMsg = 'Please select an image file to upload.'; 
     }
-    $result = $imgContent;
+    $result = $imgContent ?: $statusMsg;
             return $result;
 }
 ?>

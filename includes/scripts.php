@@ -58,13 +58,15 @@
         include"tools/insertImage.php";
         //CODE HERE
             // Variables
+                $file = $_FILES['image'];
                 $name = $_POST['name'];
                 $quantity = $_POST['quantity'];
                 $platform_id = $_POST['platform'];
                 $price = $_POST['price'];
                 $description = $_POST['description'];
             // Action
-                $image = 
+                $image = insertImage($_FILES['image']);
+                var_dump($image);
         //SQL INSERT
             // Action
                 $sql = "INSERT INTO products(`user_id`, `name`, `quantity`, `platform_id`, `price`, `description`) 
@@ -88,7 +90,7 @@
 
                 $conn->close();
         
-		header('location: ../index.php');
+		// header('location: ../index.php');
     }
     function getTasks($conn , $q)
     {
