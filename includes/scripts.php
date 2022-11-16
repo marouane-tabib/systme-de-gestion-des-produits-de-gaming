@@ -26,7 +26,7 @@
     
             if ($result->num_rows > 0) {
                 $_SESSION['message'] = "WELCOME BACK ! Login Success ... ";
-                $_SESSION['user'] = $result->fetch_assoc();
+                $_SESSION['user'] = true;
                 header("location:../index.php");
             } else {
                 $_SESSION['message'] = "No recorde register , check your password or username";

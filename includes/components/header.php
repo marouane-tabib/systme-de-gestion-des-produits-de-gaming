@@ -1,7 +1,5 @@
 <?php 
     include('includes/scripts.php');
-    // Redirect
-    if(!$_SESSION['user']){ header('location:login.php');die(); }
 ?>
 <!doctype html>
 <html lang="en">
