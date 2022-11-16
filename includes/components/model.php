@@ -11,11 +11,11 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="includes/scripts.php" method="post">
+      <form action="includes/scripts.php" method="post" enctype="multipart/form-data">
         <div class="modal-body">
             <div class="mb-3">
-              <label for="img_url" class="form-label">Image URL</label>
-              <input type="url" class="form-control" id="img_url" name="img_url" placeholder="Add Image URL (https://www.example.com)" required>
+              <label for="product-image" class="form-label">Select Image File</label>
+              <input type="file" class="form-control" id="product-image" name="image" required>
             </div>
             <div class="mb-3">
               <label for="name" class="form-label">Product Name</label>
