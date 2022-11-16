@@ -4,7 +4,8 @@
     include"includes/components/header.php";
 
     // Redirect
-    if(!$_SESSION['user']){ header('location:login.php');die(); }
+    if(!$_SESSION['user']){ header('location:login.php');die(); } 
+    // unset($_SESSION['user']);
 
     //--- Body includes
       include"includes/components/logo.php"; 

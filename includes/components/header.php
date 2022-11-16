@@ -14,13 +14,13 @@
   <body>
     <section class="container">
 
-			<?php if (isset($_SESSION['message'])): ?>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-				<!-- <strong>Success!</strong> -->
+			<?php if (isset($_SESSION['action'])): ?>
+      <div class="<?php echo $_SESSION['action']['class'] ?>" role="alert">
+				<strong><?php echo $_SESSION['action']['status'] ?></strong>
 					<?php 
-						echo $_SESSION['message']; 
-						unset($_SESSION['message']);
+						echo $_SESSION['action']['message']; 
+						unset($_SESSION['action']);
 					?>
-					<button type="button" class="btn-close" data-bs-dismiss="alert"></span>
+					  <button type="button" class="btn-close" data-bs-dismiss="alert"></span>
 				</div>
 			<?php endif ?>

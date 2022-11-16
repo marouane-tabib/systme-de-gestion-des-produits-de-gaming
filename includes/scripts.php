@@ -25,16 +25,31 @@
             $result = $conn->query($sql);
     
             if ($result->num_rows > 0) {
-                $_SESSION['message'] = "WELCOME BACK ! Login Success ... ";
+                $_SESSION['action'] = [
+                    'status' => "Success !",
+                    'message' => "WELCOME BACK ! Login Success ... ",
+                    'class' => "alert alert-success alert-dismissible fade show",
+                    'btnFade' => 1,
+                ];
                 $_SESSION['user'] = true;
                 header("location:../index.php");
             } else {
-                $_SESSION['message'] = "No recorde register , check your password or username";
+                $_SESSION['action'] = [
+                    'status' => "Problem !",
+                    'message' => "No recorde register , check your password or username",
+                    'class' => "alert alert-danger alert-dismissible fade show",
+                    'btnFade' => 0,
+                ];
                 header("location:../login.php");
             } 
             $conn->close();
         }else{
-            $_SESSION['message'] = "Please check your information";
+            $_SESSION['action'] = [
+                'status' => "Problem !",
+                'message' => "Please check your information",
+                'class' => "alert alert-danger alert-dismissible fade show",
+                'btnFade' => 0,
+            ];
             header("location:../login.php");
         }
     }
