@@ -56,21 +56,17 @@
     }
     function addProduct($conn){
         include"tools/insertImage.php";
-        //CODE HERE
-            // Variables
-                $file = $_FILES['image'];
-                $name = $_POST['name'];
-                $quantity = $_POST['quantity'];
-                $platform_id = $_POST['platform'];
-                $price = $_POST['price'];
-                $description = $_POST['description'];
-            // Action
-                $image = insertImage($_FILES['image']);
-                var_dump($image);
+
+        $name = $_POST['name'];
+        $quantity = $_POST['quantity'];
+        $platform_id = $_POST['platform'];
+        $price = $_POST['price'];
+        $description = $_POST['description'];
+        $image = insertImage($_FILES['image']);
         //SQL INSERT
             // Action
-                $sql = "INSERT INTO products(`user_id`, `name`, `quantity`, `platform_id`, `price`, `description`) 
-                VALUES (1 , '$name', '$quantity' , '$platform_id' , '$price' , '$description')";
+                $sql = "INSERT INTO products(`user_id` , `image`, `name`, `quantity`, `platform_id`, `price`, `description`) 
+                VALUES (1 , '$image', '$name' , '$quantity' , '$platform_id' , '$price' , '$description')";
 
                 if ($conn->query($sql) === TRUE) {
                     $_SESSION['action'] = [
