@@ -6,6 +6,7 @@
 
     //ROUTING
     if(isset($_POST['login']))        login($conn);
+    if(isset($_POST['add']))        addProduct($conn);
     if(isset($_POST['update']))      updateTask($conn);
     if(isset($_POST['delete']))      deleteTask($conn);
 
@@ -52,6 +53,9 @@
             ];
             header("location:../login.php");
         }
+    }
+    function addProduct($conn){
+        echo "Add product , run !";
     }
     function getTasks($conn , $q)
     {

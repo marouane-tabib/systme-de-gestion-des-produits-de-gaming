@@ -11,7 +11,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="scripts.php" method="post">
+      <form action="includes/scripts.php" method="post">
         <div class="modal-body">
             <div class="mb-3">
               <label for="img_url" class="form-label">Image URL</label>
@@ -42,7 +42,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" name="add" class="btn btn-primary">Send</button>
         </div>
       </form>
     </div>
