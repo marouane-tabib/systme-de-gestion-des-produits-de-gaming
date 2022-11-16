@@ -86,7 +86,7 @@
 
                 $conn->close();
         
-		// header('location: ../index.php');
+		header('location: ../index.php');
     }
     function getTasks($conn , $q)
     {
