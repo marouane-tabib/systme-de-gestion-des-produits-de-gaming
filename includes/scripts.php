@@ -55,7 +55,37 @@
         }
     }
     function addProduct($conn){
-        echo "Add product , run !";
+        //CODE HERE
+            // Variables
+                $name = $_POST['name'];
+                $quantity = $_POST['quantity'];
+                $platform_id = $_POST['platform'];
+                $price = $_POST['price'];
+                $description = $_POST['description'];
+        //SQL INSERT
+            // Action
+                $sql = "INSERT INTO products(`user_id`, `name`, `quantity`, `platform_id`, `price`, `description`) 
+                VALUES (1 , '$name', '$quantity' , '$platform_id' , '$price' , '$description')";
+
+                if ($conn->query($sql) === TRUE) {
+                    $_SESSION['action'] = [
+                        'status' => "Success !",
+                        'message' => "Product has been added successfully !",
+                        'class' => "alert alert-success alert-dismissible fade show",
+                        'btnFade' => 1,
+                    ];
+                } else {
+                    $_SESSION['action'] = [
+                        'status' => "Problem !",
+                        'message' => "Error: " . $sql . "<br>" . $conn->error,
+                        'class' => "alert alert-danger alert-dismissible fade show",
+                        'btnFade' => 1,
+                    ];
+                }
+
+                $conn->close();
+        
+		header('location: ../index.php');
     }
     function getTasks($conn , $q)
     {
