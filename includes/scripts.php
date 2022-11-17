@@ -147,7 +147,7 @@
             $platform_id = $_POST['platform'];
             $price = $_POST['price'];
             $description = $_POST['description'];
-            // var_dump($_FILES['image']['name']);die();
+            
             if(!empty($_FILES['image']['name'])){ $image = insertImage($_FILES['image']); }
             else{ $image = $_POST['oldImage']; }
             
@@ -156,11 +156,21 @@
             $sql = "UPDATE `products` SET 
             `user_id`='1',`image`='$image',`name`='$name',`quantity`='$quantity',`platform_id`='$platform_id',`price`='$price',`description`='$description' 
             WHERE id = '$id'";
-
+            
             if ($conn->query($sql) === TRUE) {
-            echo "Record updated successfully";
+                $_SESSION['action'] = [
+                    'status' => "Success !",
+                    'message' => "Product has been updated successfully !",
+                    'class' => "alert alert-success alert-dismissible fade show",
+                    'btnFade' => 1,
+                ];
             } else {
-            echo "Error updating record: " . $conn->error;
+                $_SESSION['action'] = [
+                    'status' => "Problem !",
+                    'message' => "Error: " . $sql . "<br>" . $conn->error,
+                    'class' => "alert alert-danger alert-dismissible fade show",
+                    'btnFade' => 1,
+                ];
             }
         $conn->close();
 
