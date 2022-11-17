@@ -140,9 +140,10 @@
             $platform_id = $_POST['platform'];
             $price = $_POST['price'];
             $description = $_POST['description'];
+            $oldImage = $_POST['oldImage'];
             
             if(!empty($_FILES['image']['name'])){ $image = insertImage($_FILES['image']); }
-            else{ $image = $_POST['oldImage']; }
+            else{ $image = $oldImage; }
             
             
         if(!$image or !$name or !$quantity or !$platform_id or !$price or !$description){ 
@@ -151,22 +152,22 @@
                 'message' => "No updated recorde , Please try again ...",
                 'class' => "alert alert-danger alert-dismissible fade show",
                 'btnFade' => 1,
-            ];
-                
-            header('location: ../update.php');
+            ]; 
+            header('location: ../update.php?id='.$id);
          }else{
             //SQL UPDATE
             $sql = "UPDATE `products` SET 
             `user_id`='1',`image`='$image',`name`='$name',`quantity`='$quantity',`platform_id`='$platform_id',`price`='$price',`description`='$description' 
             WHERE id = '$id'";
             
-            if ($conn->query($sql) === TRUE) {
+            if ($conn->query($sql) === TRUE) {  
                 $_SESSION['action'] = [
                     'status' => "Success !",
                     'message' => "Product has been updated successfully !",
                     'class' => "alert alert-success alert-dismissible fade show",
                     'btnFade' => 1,
                 ];
+                header('location: ../index.php');
             } else {
                 $_SESSION['action'] = [
                     'status' => "Problem !",
@@ -174,22 +175,27 @@
                     'class' => "alert alert-danger alert-dismissible fade show",
                     'btnFade' => 1,
                 ];
+                header('location: ../index.php');
             }
          }
         $conn->close();
-
-        $_SESSION['message'] = "Task has been updated successfully !";
     }
 
     function deleteProduct($conn){
         //CODE HERE
             $id = $_POST['delete'];
+        // SQL SELECT - TO DESTROY IMAGE
+            $selectSql = "SELECT image FROM products WHERE id = '$id'";
+            $selectResult = $conn->query($selectSql);
+            $selectResult = $selectResult->fetch_assoc();
         //SQL DELETE
             $sql = "DELETE FROM `products` WHERE id=$id";
         
         if ($conn->query($sql) === TRUE) {
                 $_SESSION['message'] = "Task has been deleted successfully !";
-                header('location: ../index.php');
+                $status = unlink('../assets/images/products/'.$selectResult['image']); 
+                echo $status;
+                // header('location: ../index.php');
         } else {
             echo "Error deleting record: " . $conn->error;
         }
