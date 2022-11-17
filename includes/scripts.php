@@ -5,10 +5,10 @@
     session_start();
 
     //ROUTING
-    if(isset($_POST['login']))        login($conn);
-    if(isset($_POST['add']))        addProduct($conn);
-    if(isset($_POST['update']))      updateTask($conn);
-    if(isset($_POST['delete']))      deleteTask($conn);
+    if(isset($_POST['login']))          login($conn);
+    if(isset($_POST['add']))            addProduct($conn);
+    if(isset($_POST['update']))         updateTask($conn);
+    if(isset($_POST['delete']))         deleteProduct($conn);
 
     function login($conn){
         $username = $_POST['username'];
@@ -160,12 +160,12 @@
 		header('location: ../index.php');
     }
 
-    function deleteTask($conn)
+    function deleteProduct($conn)
     {
         //CODE HERE
             $id = $_POST['delete'];
         //SQL DELETE
-            $sql = "DELETE FROM `tasks` WHERE id=$id";
+            $sql = "DELETE FROM `products` WHERE id=$id";
         
         if ($conn->query($sql) === TRUE) {
                 $_SESSION['message'] = "Task has been deleted successfully !";
