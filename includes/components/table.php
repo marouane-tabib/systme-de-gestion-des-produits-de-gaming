@@ -27,8 +27,9 @@ $i=0;
                         <td><?php echo $row['description'] ?></td>
                         <td class="column">
                             <div class="mx-auto">
-                                <a href="#" class="mx-2" style="color:red"><i class="fa-solid fa-trash"></i></a>
-                                <a href="#" class="mx-2" style="color:green"><i class="fa-solid fa-pen"></i></a>
+                                <!-- <a href="#" class="mx-2" style="color:red"><i class="fa-solid fa-trash"></i></a>
+                                <a href="#" class="mx-2" style="color:green"><i class="fa-solid fa-pen"></i></a> -->
+                                <?php include'includes/components/actionsIcons.php' ?>
                             </div>
                         </td>
                     </tr>

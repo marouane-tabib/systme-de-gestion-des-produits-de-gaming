@@ -1,9 +1,9 @@
         <a href="javascript:void(0)"
             onclick="if(confirm('Are You sure to delete this record?')){document.querySelector('#delete-task-<?php echo $row['id'] ?>').submit();} else {return false}"
-            class="delete-icon" id="delete-btn">
-                <i class="fa fa-trash"></i>
+            class="mx-2 text-danger" id="delete-btn">
+                <i class="fa-solid fa-trash"></i>
         </a>
-        <a href="update.php?id=<?php echo $row["id"]?>">
+        <a href="update.php?id=<?php echo $row["id"]?>" class="mx-2 text-success">
             <i class="fa-solid fa-pen-to-square"></i>
         </a>
         
