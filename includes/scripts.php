@@ -54,6 +54,7 @@
             header("location:../login.php");
         }
     }
+    
     function addProduct($conn){
         include"tools/insertImage.php";
 
@@ -99,6 +100,7 @@
         
 		header('location: ../index.php');
     }
+
     function getproducts($conn){
             $sql = "SELECT products.* , platforms.name AS platform
                     FROM products 
@@ -112,15 +114,6 @@
                  echo "0 results";
             } 
             $conn->close();
-    }
-
-    function sumTasks($conn , $status){
-        $sql = "SELECT COUNT(*) as sum FROM tasks WHERE status = '$status'";
-
-        $result = $conn->query($sql);
-        $result = $result->fetch_assoc();
-        return $result;
-        $conn->close();
     }
 
     function getProduct($conn){
