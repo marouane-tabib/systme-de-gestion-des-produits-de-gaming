@@ -12,6 +12,7 @@ $i=0;
                 <th scope="col">Platform</th>
                 <th scope="col">Price</th>
                 <th scope="col" id="description">Description</th>
+                <th scope="col" id="description">Action</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -24,6 +25,10 @@ $i=0;
                         <td><?php echo $row['platform'] ?></td>
                         <td><?php echo $row['price'] ?></td>
                         <td><?php echo $row['description'] ?></td>
+                        <td>
+                            <a href="#">Delete</a>
+                            <a href="#">Update</a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
