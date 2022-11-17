@@ -15,7 +15,7 @@ $i=0;
                 </tr>
             </thead>
             <tbody class="table-group-divider">
-                <?php while ($row = $data->fetch_assoc()) { $i++; ?>
+                <?php while ($row = $data->fetch_assoc()) { $i++ ?>
                     <tr>
                         <th class="col-2"><img src="assets/images/products/<?php echo $row['image'] ?>" width="70"></th>
                         <th scope="row"><?php echo $i ?></th>

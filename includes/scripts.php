@@ -103,7 +103,7 @@
     {
             $sql = "SELECT products.* , platforms.name AS platform
                     FROM products 
-                    INNER JOIN platforms";
+                    INNER JOIN platforms ON products.platform_id = platforms.id";
 
             $result = $conn->query($sql);
 
