@@ -20,7 +20,7 @@ $data = getproducts($conn);
                         <th scope="row">1</th>
                         <td><?php echo $row['name'] ?></td>
                         <td><?php echo $row['quantity'] ?></td>
-                        <td><?php echo $row['platform_id'] ?></td>
+                        <td><?php echo $row['platform'] ?></td>
                         <td><?php echo $row['price'] ?></td>
                         <td><?php echo $row['description'] ?></td>
                     </tr>
