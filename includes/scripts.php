@@ -153,7 +153,7 @@
                 'btnFade' => 1,
             ];
                 
-            header('location: ../index.php');
+            header('location: ../update.php');
          }else{
             //SQL UPDATE
             $sql = "UPDATE `products` SET 
