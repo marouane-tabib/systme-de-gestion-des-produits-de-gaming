@@ -11,7 +11,8 @@
             </div>
             <div class="mb-3">
               <label for="product-image" class="form-label">Select Image File</label>
-              <input type="file" value="assets/images/products/<?php echo $item['image'] ?>" class="form-control" id="product-image" name="image" required>
+              <input type="file" class="form-control" id="product-image" name="image" <?php if(!$item['image']){ echo 'required' ;}?>>
+              <input type="hidden" name="oldImage" value="<?php echo $item['image'] ?>">
             </div>
             <div class="mb-3">
               <label for="name" class="form-label">Product Name</label>
@@ -39,7 +40,7 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" name="add" class="btn btn-primary">Update</button>
+          <button type="submit" name="update" class="btn btn-primary">Update</button>
         </div>
       </form>
         </div>
