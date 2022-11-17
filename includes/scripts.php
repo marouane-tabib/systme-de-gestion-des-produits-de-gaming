@@ -95,7 +95,6 @@
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                $result = $result->fetch_assoc();
                 return $result;
             } else {
                  echo "0 results";
