@@ -90,7 +90,9 @@
     }
     function getproducts($conn)
     {
-            $sql = "SELECT  * FROM products";
+            $sql = "SELECT products.* , platforms.name AS platform
+                    FROM products 
+                    INNER JOIN platforms";
 
             $result = $conn->query($sql);
 
