@@ -63,26 +63,37 @@
         $price = $_POST['price'];
         $description = $_POST['description'];
         $image = insertImage($_FILES['image']);
+        if(!$image or !$name or !$quantity or !$platform_id or !$price or !$description){ 
+            $_SESSION['action'] = [
+                'status' => "Problem !",
+                'message' => "Please Chek Your products details ... ",
+                'class' => "alert alert-danger alert-dismissible fade show",
+                'btnFade' => 1,
+            ];
+                
+            header('location: ../index.php');
+         }
+        else{
         //SQL INSERT
-            // Action
-                $sql = "INSERT INTO products(`user_id` , `image`, `name`, `quantity`, `platform_id`, `price`, `description`) 
-                VALUES (1 , '$image', '$name' , '$quantity' , '$platform_id' , '$price' , '$description')";
+            $sql = "INSERT INTO products(`user_id` , `image`, `name`, `quantity`, `platform_id`, `price`, `description`) 
+            VALUES (1 , '$image', '$name' , '$quantity' , '$platform_id' , '$price' , '$description')";
 
-                if ($conn->query($sql) === TRUE) {
-                    $_SESSION['action'] = [
-                        'status' => "Success !",
-                        'message' => "Product has been added successfully !",
-                        'class' => "alert alert-success alert-dismissible fade show",
-                        'btnFade' => 1,
-                    ];
-                } else {
-                    $_SESSION['action'] = [
-                        'status' => "Problem !",
-                        'message' => "Error: " . $sql . "<br>" . $conn->error,
-                        'class' => "alert alert-danger alert-dismissible fade show",
-                        'btnFade' => 1,
-                    ];
-                }
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION['action'] = [
+                    'status' => "Success !",
+                    'message' => "Product has been added successfully !",
+                    'class' => "alert alert-success alert-dismissible fade show",
+                    'btnFade' => 1,
+                ];
+            } else {
+                $_SESSION['action'] = [
+                    'status' => "Problem !",
+                    'message' => "Error: " . $sql . "<br>" . $conn->error,
+                    'class' => "alert alert-danger alert-dismissible fade show",
+                    'btnFade' => 1,
+                ];
+            }
+        }
 
                 $conn->close();
         
