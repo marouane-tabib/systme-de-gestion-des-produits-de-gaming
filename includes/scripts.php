@@ -148,7 +148,7 @@
         if(!$image or !$name or !$quantity or !$platform_id or !$price or !$description){ 
             $_SESSION['action'] = [
                 'status' => "Problem !",
-                'message' => "Please Chek Your products details ... ",
+                'message' => "No updated recorde , Please try again ...",
                 'class' => "alert alert-danger alert-dismissible fade show",
                 'btnFade' => 1,
             ];
@@ -179,7 +179,6 @@
         $conn->close();
 
         $_SESSION['message'] = "Task has been updated successfully !";
-		header('location: ../index.php');
     }
 
     function deleteProduct($conn){
