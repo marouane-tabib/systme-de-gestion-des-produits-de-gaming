@@ -125,7 +125,10 @@
 
     function getProduct($conn){
         $id = $_GET['id'];
-        $sql = "SELECT * FROM products WHERE id = $id";
+        $sql = "SELECT products.* , platforms.name AS platform
+                FROM products
+                INNER JOIN platforms ON products.platform_id = platforms.id
+                WHERE products.id = '$id'";
 
         $result = $conn->query($sql);
         $result = $result->fetch_assoc();

@@ -7,6 +7,9 @@
       <form action="includes/scripts.php" method="post" enctype="multipart/form-data">
         <div class="modal-body">
             <div class="mb-3">
+                <img src="assets/images/products/<?php echo $item['image'] ?>" height="200px" width="170px" alt="" srcset="">
+            </div>
+            <div class="mb-3">
               <label for="product-image" class="form-label">Select Image File</label>
               <input type="file" value="assets/images/products/<?php echo $item['image'] ?>" class="form-control" id="product-image" name="image" required>
             </div>
