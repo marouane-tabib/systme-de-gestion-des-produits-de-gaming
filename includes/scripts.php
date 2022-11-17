@@ -123,9 +123,9 @@
         $conn->close();
     }
 
-    function getTask($conn){
+    function getProduct($conn){
         $id = $_GET['id'];
-        $sql = "SELECT * FROM tasks WHERE id = $id";
+        $sql = "SELECT * FROM products WHERE id = $id";
 
         $result = $conn->query($sql);
         $result = $result->fetch_assoc();
