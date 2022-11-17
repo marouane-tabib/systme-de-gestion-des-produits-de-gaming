@@ -110,9 +110,7 @@
 
             if ($result->num_rows > 0) {
                 return $result;
-            } else {
-                 echo "0 results";
-            } 
+            }
             $conn->close();
     }
 
