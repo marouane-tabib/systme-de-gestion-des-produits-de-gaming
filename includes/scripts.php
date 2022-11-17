@@ -54,7 +54,7 @@
             header("location:../login.php");
         }
     }
-    
+
     function addProduct($conn){
         include"tools/insertImage.php";
 
@@ -145,7 +145,17 @@
             else{ $image = $_POST['oldImage']; }
             
             
-        //SQL UPDATE
+        if(!$image or !$name or !$quantity or !$platform_id or !$price or !$description){ 
+            $_SESSION['action'] = [
+                'status' => "Problem !",
+                'message' => "Please Chek Your products details ... ",
+                'class' => "alert alert-danger alert-dismissible fade show",
+                'btnFade' => 1,
+            ];
+                
+            header('location: ../index.php');
+         }else{
+            //SQL UPDATE
             $sql = "UPDATE `products` SET 
             `user_id`='1',`image`='$image',`name`='$name',`quantity`='$quantity',`platform_id`='$platform_id',`price`='$price',`description`='$description' 
             WHERE id = '$id'";
@@ -165,6 +175,7 @@
                     'btnFade' => 1,
                 ];
             }
+         }
         $conn->close();
 
         $_SESSION['message'] = "Task has been updated successfully !";
