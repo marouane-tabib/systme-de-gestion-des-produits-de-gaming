@@ -1,10 +1,11 @@
 <?php   
+  
     //--- Header include
     $title = "Home";
     include"includes/components/header.php";
 
     // Redirect
-    if(!$_SESSION['user']){ header('location:login.php');die(); } 
+    if(!isset($_SESSION['user'])){ header('location:login.php'); die(); }
     // unset($_SESSION['user']);
 
     //--- Body includes
