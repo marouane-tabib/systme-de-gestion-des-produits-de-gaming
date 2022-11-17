@@ -88,11 +88,12 @@
         
 		header('location: ../index.php');
     }
-    function getTasks($conn , $q)
+    function getproducts($conn)
     {
-            $sql = "SELECT  * FROM tasks WHERE status = '$q'";
+            $sql = "SELECT  * FROM products";
 
             $result = $conn->query($sql);
+            $result = $result->fetch_assoc();
 
             if ($result->num_rows > 0) {
                 return $result;
@@ -109,32 +110,6 @@
         $result = $result->fetch_assoc();
         return $result;
         $conn->close();
-    }
-
-    function saveTask($conn)
-    {
-        //CODE HERE
-            // Variables
-                $title = $_POST['title'];
-                $type = $_POST['type'];
-                $priority = $_POST['priority'];
-                $status = $_POST['status'];
-                $date = $_POST['date'];
-                $description = $_POST['description'];
-        //SQL INSERT
-            // Action
-                $sql = "INSERT INTO tasks(`title`, `type`, `priority`, `status`, `task_datetime`, `description`) 
-                VALUES ('$title', '$type' , '$priority' , '$status' , '$date', '$description')";
-
-                if ($conn->query($sql) === TRUE) {
-                    $_SESSION['message'] = "Task has been added successfully !";
-                } else {
-                    $_SESSION['message'] = "Error: " . $sql . "<br>" . $conn->error;
-                }
-
-                $conn->close();
-        
-		header('location: ../index.php');
     }
 
     function getTask($conn){
