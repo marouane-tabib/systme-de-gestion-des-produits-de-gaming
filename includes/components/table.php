@@ -26,8 +26,8 @@ $i=0;
                         <td><?php echo $row['price'] ?></td>
                         <td><?php echo $row['description'] ?></td>
                         <td>
-                            <a href="#">Delete</a>
-                            <a href="#">Update</a>
+                            <a href="#"><i class="fa-solid fa-trash"></i></a>
+                            <a href="#"><i class="fa-solid fa-pen"></i></a>
                         </td>
                     </tr>
                 <?php } ?>
