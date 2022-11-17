@@ -99,8 +99,7 @@
         
 		header('location: ../index.php');
     }
-    function getproducts($conn)
-    {
+    function getproducts($conn){
             $sql = "SELECT products.* , platforms.name AS platform
                     FROM products 
                     INNER JOIN platforms ON products.platform_id = platforms.id";
