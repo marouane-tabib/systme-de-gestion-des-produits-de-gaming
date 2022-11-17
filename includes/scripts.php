@@ -7,7 +7,7 @@
     //ROUTING
     if(isset($_POST['login']))          login($conn);
     if(isset($_POST['add']))            addProduct($conn);
-    if(isset($_POST['update']))         updateTask($conn);
+    if(isset($_POST['update']))         updateProduct($conn);
     if(isset($_POST['delete']))         deleteProduct($conn);
 
     function login($conn){
@@ -137,20 +137,25 @@
         $conn->close();
         return $result;
     }
-    function updateTask($conn)
-    {
+
+    function updateProduct($conn){
+        include"tools/insertImage.php";
         //CODE HERE
-            $title = $_POST['title'];
-            $type = $_POST['type'];
-            $priority = $_POST['priority'];
-            $status = $_POST['status'];
-            $date = $_POST['date'];
-            $description = $_POST['description'];
             $id = $_SESSION['id'];
+            $name = $_POST['name'];
+            $quantity = $_POST['quantity'];
+            $platform_id = $_POST['platform'];
+            $price = $_POST['price'];
+            $description = $_POST['description'];
+            // var_dump($_FILES['image']['name']);die();
+            if(!empty($_FILES['image']['name'])){ $image = insertImage($_FILES['image']); }
+            else{ $image = $_POST['oldImage']; }
+            
+            
         //SQL UPDATE
-            $sql = "UPDATE `tasks` SET
-            `title`='$title',`type`='$type',`priority`='$priority',`status`='$status',
-            `task_datetime`='$date',`description`='$description' WHERE id = $id";
+            $sql = "UPDATE `products` SET 
+            `user_id`='1',`image`='$image',`name`='$name',`quantity`='$quantity',`platform_id`='$platform_id',`price`='$price',`description`='$description' 
+            WHERE id = '$id'";
 
             if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
@@ -163,8 +168,7 @@
 		header('location: ../index.php');
     }
 
-    function deleteProduct($conn)
-    {
+    function deleteProduct($conn){
         //CODE HERE
             $id = $_POST['delete'];
         //SQL DELETE
