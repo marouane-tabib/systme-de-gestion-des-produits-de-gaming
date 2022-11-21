@@ -1,6 +1,8 @@
 <?php
     //INCLUDE DATABASE FILE
     include('database.php');
+    // INCLUDE TOOLS FILES
+    include('tools/sessionGenerator.php');
     //SESSSION IS A WAY TO STORE DATA TO BE USED ACROSS MULTIPLE PAGES
     session_start();
 
@@ -154,21 +156,5 @@
             echo "Error deleting record: " . $conn->error;
         }
         $conn->close();
-    }
-
-    function sessionGenerator($status = "success" , $message = "WELCOME BACK ! Login Success ... "){
-        if ($status == "success") {
-            $_SESSION['action'] = [
-                'status' => "Success !",
-                'class' => "alert alert-success alert-dismissible fade show",
-                'message' => $message,
-            ];
-        }elseif($status == "issue"){
-            $_SESSION['action'] = [
-                'status' => "Problem !",
-                'class' => "alert alert-danger alert-dismissible fade show",
-                'message' => $message,
-            ];
-        }
     }
 ?>
