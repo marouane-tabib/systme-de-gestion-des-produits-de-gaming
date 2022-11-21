@@ -14,32 +14,21 @@
   <body>
     <style>
       .container-box{
-        /* display: flex;*/
-        /* flex-direction: column; */
         height: 100vh;
         background-color: green; 
       }
       .container-box .content-container{
-        /* display: flex;
-        flex-direction: row; */
         background-color: goldenrod;
         height: 92%;
       }
       .container-box .nav-bar-box{
-        /* display: flex;
-        flex: 1; */
         background-color: greenyellow;
         height: 8%;
       }
       .container-box .side-bar-box{
-        /* display: flex;
-        flex: .2; */
         background-color: blue;
       }
       .container-box .content-box{
-        /* display: flex; */
-        /* flex-direction: column;
-        flex: 1; */
         overflow: auto;
         background-color: red;
       }
