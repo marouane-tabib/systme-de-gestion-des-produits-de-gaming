@@ -15,7 +15,7 @@ $i=0;
                 <th scope="col" id="description">Action</th>
                 </tr>
             </thead>
-            <tbody class="table-group-divider">
+            <tbody class="table-group-divider table-responsive">
                 <?php if(isset($data)){ while ($row = $data->fetch_assoc()) { $i++ ?>
                     <tr>
                         <th class="col-2"><img src="assets/images/products/<?php echo $row['image'] ?>" width="70"></th>

@@ -14,41 +14,41 @@
   <body>
     <style>
       .container-box{
-        display: flex;
-        flex-direction: column;
+        /* display: flex;*/
+        /* flex-direction: column; */
         height: 100vh;
-        background-color: green;
+        background-color: green; 
       }
       .container-box .content-container{
-        display: flex;
-        flex-direction: row;
+        /* display: flex;
+        flex-direction: row; */
         background-color: goldenrod;
         height: 92%;
       }
       .container-box .nav-bar-box{
-        display: flex;
-        flex: 1;
+        /* display: flex;
+        flex: 1; */
         background-color: greenyellow;
         height: 8%;
       }
       .container-box .side-bar-box{
-        display: flex;
-        flex: .2;
+        /* display: flex;
+        flex: .2; */
         background-color: blue;
       }
       .container-box .content-box{
-        display: flex;
-        flex-direction: column;
-        flex: 1;
+        /* display: flex; */
+        /* flex-direction: column;
+        flex: 1; */
         overflow: auto;
         background-color: red;
       }
     </style>
-    <div class="container-box">
+    <div class="container-box flex-column d-flex">
       <div class="nav-bar-box"></div>
-      <div class="content-container" style="height: 92%;">
-        <div class="side-bar-box"></div>
-        <div class="content-box">
+      <div class="content-container flex-row d-flex">
+        <div class="side-bar-box col-2"></div>
+        <div class="content-box col">
     <section class="container">
 
 			<?php if (isset($_SESSION['action'])): ?>
