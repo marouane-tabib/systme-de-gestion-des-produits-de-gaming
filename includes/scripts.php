@@ -41,7 +41,7 @@
                     'class' => "alert alert-danger alert-dismissible fade show",
                     'btnFade' => 0,
                 ];
-                header("location:../login.php");
+                header("location:../login.php");die();
             } 
             $conn->close();
         }else{
@@ -98,7 +98,7 @@
 
                 $conn->close();
         
-		header('location: ../index.php');
+		header('location: ../index.php');die();
     }
 
     function getproducts($conn){
@@ -151,7 +151,7 @@
                 'class' => "alert alert-danger alert-dismissible fade show",
                 'btnFade' => 1,
             ]; 
-            header('location: ../update.php?id='.$id);
+            header('location: ../update.php?id='.$id);die();
          }else{
             //SQL UPDATE
             $sql = "UPDATE `products` SET 
@@ -165,7 +165,7 @@
                     'class' => "alert alert-success alert-dismissible fade show",
                     'btnFade' => 1,
                 ];
-                header('location: ../index.php');
+                header('location: ../index.php');die();
             } else {
                 $_SESSION['action'] = [
                     'status' => "Problem !",
@@ -173,7 +173,7 @@
                     'class' => "alert alert-danger alert-dismissible fade show",
                     'btnFade' => 1,
                 ];
-                header('location: ../index.php');
+                header('location: ../index.php');die();
             }
          }
         $conn->close();
@@ -193,7 +193,7 @@
                 $_SESSION['message'] = "Task has been deleted successfully !";
                 $status = unlink('../assets/images/products/'.$selectResult['image']); 
                 echo $status;
-                // header('location: ../index.php');
+                header('location: ../index.php');die();
         } else {
             echo "Error deleting record: " . $conn->error;
         }
