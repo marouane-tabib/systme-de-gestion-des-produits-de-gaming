@@ -26,33 +26,15 @@
             $result = $conn->query($sql);
     
             if ($result->num_rows > 0) {
-                // $_SESSION['action'] = [
-                //     'status' => "Success !",
-                //     'message' => "WELCOME BACK ! Login Success ... ",
-                //     'class' => "alert alert-success alert-dismissible fade show",
-                //     'btnFade' => 1,
-                // ];
                 sessionGenerator();
                 $_SESSION['user'] = true;
                 header("location:../index.php");
             } else {
-                // $_SESSION['action'] = [
-                //     'status' => "Problem !",
-                //     'message' => "No recorde register , check your password or username",
-                //     'class' => "alert alert-danger alert-dismissible fade show",
-                //     'btnFade' => 0,
-                // ];
                 sessionGenerator("issue" , "No recorde register , check your password or username");
                 header("location:../login.php");die();
             } 
             $conn->close();
         }else{
-            // $_SESSION['action'] = [
-            //     'status' => "Problem !",
-            //     'message' => "Please check your information",
-            //     'class' => "alert alert-danger alert-dismissible fade show",
-            //     'btnFade' => 0,
-            // ];
             sessionGenerator("issue" , "Please check your information");
             header("location:../login.php");
         }
@@ -68,12 +50,6 @@
         $description = $_POST['description'];
         $image = insertImage($_FILES['image']);
         if(!$image or !$name or !$quantity or !$platform_id or !$price or !$description){ 
-            // $_SESSION['action'] = [
-            //     'status' => "Problem !",
-            //     'message' => "Please Chek Your products details ... ",
-            //     'class' => "alert alert-danger alert-dismissible fade show",
-            //     'btnFade' => 1,
-            // ];
             sessionGenerator("issue" , "Please Chek Your products details ...");
             header('location: ../index.php');
          }
@@ -83,20 +59,8 @@
             VALUES (1 , '$image', '$name' , '$quantity' , '$platform_id' , '$price' , '$description')";
 
             if ($conn->query($sql) === TRUE) {
-                // $_SESSION['action'] = [
-                //     'status' => "Success !",
-                //     'message' => "Product has been added successfully !",
-                //     'class' => "alert alert-success alert-dismissible fade show",
-                //     'btnFade' => 1,
-                // ];
                 sessionGenerator("success" , "Product has been added successfully !");
             } else {
-                // $_SESSION['action'] = [
-                //     'status' => "Problem !",
-                //     'message' => "Error: " . $sql . "<br>" . $conn->error,
-                //     'class' => "alert alert-danger alert-dismissible fade show",
-                //     'btnFade' => 1,
-                // ];
                 sessionGenerator("issue" , "Error: " . $sql . "<br>" . $conn->error);
             }
         }
@@ -153,12 +117,6 @@
             
             
         if(!$image or !$name or !$quantity or !$platform_id or !$price or !$description){ 
-            // $_SESSION['action'] = [
-            //     'status' => "Problem !",
-            //     'message' => "No updated recorde , Please try again ...",
-            //     'class' => "alert alert-danger alert-dismissible fade show",
-            //     'btnFade' => 1,
-            // ]; 
             sessionGenerator("issue" , "No updated recorde , Please try again ...");
             header('location: ../update.php?id='.$id);die();
          }else{
@@ -168,21 +126,9 @@
             WHERE id = '$id'";
             
             if ($conn->query($sql) === TRUE) {  
-                // $_SESSION['action'] = [
-                //     'status' => "Success !",
-                //     'message' => "Product has been updated successfully !",
-                //     'class' => "alert alert-success alert-dismissible fade show",
-                //     'btnFade' => 1,
-                // ];
                 sessionGenerator("success" , "Product has been added successfully !");
                 header('location: ../index.php');die();
             } else {
-                // $_SESSION['action'] = [
-                //     'status' => "Problem !",
-                //     'message' => "Error: " . $sql . "<br>" . $conn->error,
-                //     'class' => "alert alert-danger alert-dismissible fade show",
-                //     'btnFade' => 1,
-                // ];
                 sessionGenerator("issue" , "Error: " . $sql . "<br>" . $conn->error);
                 header('location: ../index.php');die();
             }
