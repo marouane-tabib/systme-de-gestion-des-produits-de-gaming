@@ -14,6 +14,8 @@
   <body>
     <style>
       .container-box{
+        display: flex;
+        flex-direction: column;
         height: 100vh;
         background-color: green; 
       }
@@ -33,8 +35,8 @@
         background-color: red;
       }
     </style>
-    <div class="container-box flex-column d-flex">
-      <nav class="nav-bar-box navbar bg-light py-0">
+    <div class="container-box">
+      <nav class="nav-bar-box navbar bg-light py-0 shadow">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="assets/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
