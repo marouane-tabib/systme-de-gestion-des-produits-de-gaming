@@ -38,7 +38,9 @@
       }
       .container-box .content-box{
         display: flex;
+        flex-direction: column;
         flex: 1;
+        overflow: auto;
         background-color: red;
       }
     </style>
@@ -46,9 +48,7 @@
       <div class="nav-bar-box"></div>
       <div class="content-container" style="height: 92%;">
         <div class="side-bar-box"></div>
-        <div class="content-box"></div>
-      </div>
-    </div>
+        <div class="content-box">
     <section class="container">
 
 			<?php if (isset($_SESSION['action'])): ?>
