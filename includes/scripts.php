@@ -140,7 +140,10 @@
             $description = $_POST['description'];
             $oldImage = $_POST['oldImage'];
             
-            if(!empty($_FILES['image']['name'])){ $image = insertImage($_FILES['image']); }
+            if(!empty($_FILES['image']['name'])){ 
+                unlink('../assets/images/products/'.$oldImage);
+                $image = insertImage($_FILES['image']);
+            }
             else{ $image = $oldImage; }
             
             
@@ -192,7 +195,6 @@
         if ($conn->query($sql) === TRUE) {
                 $_SESSION['message'] = "Task has been deleted successfully !";
                 $status = unlink('../assets/images/products/'.$selectResult['image']); 
-                echo $status;
                 header('location: ../index.php');die();
         } else {
             echo "Error deleting record: " . $conn->error;
