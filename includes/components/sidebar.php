@@ -6,7 +6,7 @@
     </a>
   </div>
   <div class="row bg-white py-3 px-2 shadow shadow-sm">
-    <a href="category.php">
+    <a href="categories.php">
       <span class="icon col-md-3 col-12"><i class="fa-brands fa-lg fa-dribbble"></i></span>
       <span class="page col">Categories</span>
     </a>
