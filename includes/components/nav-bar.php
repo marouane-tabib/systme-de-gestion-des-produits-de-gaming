@@ -1,5 +1,5 @@
 
-      <nav class="nav-bar-box navbar bg-light py-0 shadow shadow-sm">
+      <nav class="nav-bar-box navbar bg-white py-0 shadow shadow-sm">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="assets/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
