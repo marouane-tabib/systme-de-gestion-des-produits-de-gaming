@@ -160,6 +160,7 @@
 
 // Platforms Section... 
     if(isset($_POST['saveplatform']))         addPlatform($conn);
+    if(isset($_POST['delete_platform']))      delete_platform($conn);
     function getplatforms($conn){
         $sql = "SELECT * FROM platforms";
 
@@ -188,5 +189,19 @@
         }
         $conn->close();
         header('location: ../platforms.php');die();
+    }
+    function delete_platform($conn){
+        //CODE HERE
+            $id = $_POST['delete_platform'];
+        //SQL DELETE
+            $sql = "DELETE FROM `platforms` WHERE id = '$id' ";
+
+        if ($conn->query($sql) === TRUE) {
+                $_SESSION['message'] = "Task has been deleted successfully !";
+                header('location: ../platforms.php');die();
+        } else {
+            echo "Error deleting record: " . $conn->error;
+        }
+        $conn->close();
     }
 ?>
