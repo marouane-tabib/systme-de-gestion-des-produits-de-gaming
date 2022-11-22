@@ -29,6 +29,14 @@
       }
       .container-box .side-bar-box{
         background-color: blue;
+        overflow: hidden;
+        white-space: nowrap;
+        transition:.3s;
+      }
+      .container-box .side-bar-box .row:hover{
+        filter:invert(1);
+        cursor: pointer;
+        transition:.5s;
       }
       .container-box .content-box{
         overflow: auto;
@@ -39,7 +47,17 @@
       <!-- Nav Bar - Component -->
       <?php include'includes/components/nav-bar.php'; ?>
       <div class="content-container flex-row d-flex">
-        <div class="side-bar-box col-2"></div>
+        <div class="side-bar-box col-md-2 col-2 bg-white">
+          <div class="row bg-light py-3 px-2 my-2 shadow shadow-sm">
+            <span class="icon col-3"><i class="fa fa-lg fa-home"></i></span>
+            <span class="page col">Home</span>
+          </div>
+          <div class="row bg-light py-3 px-2 shadow shadow-sm">
+            <span class="icon col-3"><i class="fa fa-lg fa-home"></i></span>
+            <span class="page col">Categories</span>
+          </div>
+
+        </div>
         <div class="content-box col">
           <section class="container">
 
