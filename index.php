@@ -6,6 +6,7 @@
 
     // Redirect
     if(!isset($_SESSION['user'])){ header('location:login.php'); die(); }
+    $data = getproducts($conn);
 
     //--- Body includes
       include"includes/components/model.php"; 
