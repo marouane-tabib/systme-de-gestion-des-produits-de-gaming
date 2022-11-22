@@ -49,14 +49,13 @@
       <div class="content-container flex-row d-flex">
         <div class="side-bar-box col-md-2 col-2 bg-white">
           <div class="row bg-light py-3 px-2 my-2 shadow shadow-sm">
-            <span class="icon col-3"><i class="fa fa-lg fa-home"></i></span>
+            <span class="icon col-md-3 col-12"><i class="fa fa-lg fa-home"></i></span>
             <span class="page col">Home</span>
           </div>
           <div class="row bg-light py-3 px-2 shadow shadow-sm">
-            <span class="icon col-3"><i class="fa fa-lg fa-home"></i></span>
+            <span class="icon col-md-3 col-12"><i class="fa-brands fa-lg fa-dribbble"></i></span>
             <span class="page col">Categories</span>
           </div>
-
         </div>
         <div class="content-box col">
           <section class="container">
