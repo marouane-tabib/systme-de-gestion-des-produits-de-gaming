@@ -15,7 +15,7 @@
               <li><a class="dropdown-item desible" href="#"><?= $_SESSION['user'] ?></a></li>
               <li>
                 <form action="includes/scripts.php" method="post">
-                  <input type="submit" value="Log Out" name="logout" class="dropdown-item">
+                  <input type="submit" value="Log out" name="logout" class="dropdown-item">
                 </form>
               </li>
               <?php } else {?>
