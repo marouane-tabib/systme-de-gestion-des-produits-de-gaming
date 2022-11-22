@@ -41,6 +41,10 @@
       .container-box .side-bar-box .row{
         flex-wrap: nowrap;
       }
+      .container-box .side-bar-box .row a{
+        color: black;
+        text-decoration: none;
+      }
       .container-box .side-bar-box .row .icon{
         display: flex;
         justify-content: center;
@@ -57,12 +61,16 @@
       <div class="content-container flex-row d-flex">
         <div class="side-bar-box col-md-2 col-2 bg-white">
           <div class="row bg-light py-3 px-2 my-2 shadow shadow-sm">
-            <span class="icon col-md-3 col-12"><i class="fa fa-lg fa-home"></i></span>
-            <span class="page col">Home</span>
+            <a href="index.php">
+              <span class="icon col-md-3 col-12"><i class="fa fa-lg fa-home"></i></span>
+              <span class="page col">Home</span>
+            </a>
           </div>
           <div class="row bg-light py-3 px-2 shadow shadow-sm">
-            <span class="icon col-md-3 col-12"><i class="fa-brands fa-lg fa-dribbble"></i></span>
-            <span class="page col">Categories</span>
+            <a href="category.php">
+              <span class="icon col-md-3 col-12"><i class="fa-brands fa-lg fa-dribbble"></i></span>
+              <span class="page col">Categories</span>
+            </a>
           </div>
         </div>
         <div class="content-box col">
