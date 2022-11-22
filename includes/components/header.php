@@ -38,6 +38,14 @@
         cursor: pointer;
         transition:.5s;
       }
+      .container-box .side-bar-box .row{
+        flex-wrap: nowrap;
+      }
+      .container-box .side-bar-box .row .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .container-box .content-box{
         overflow: auto;
         background-color: red;
