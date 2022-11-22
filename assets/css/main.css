@@ -43,3 +43,9 @@ body{
   overflow: auto;
   background-color: red;
 }
+.bg-white {
+  background: #F8F8F8 !important;
+}
+.bg-light {
+  background: #ebebeb !important;
+}
