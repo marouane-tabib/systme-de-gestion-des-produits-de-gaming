@@ -157,6 +157,9 @@
         }
         $conn->close();
     }
+
+// Platforms Section... 
+    if(isset($_POST['saveplatform']))         addPlatform($conn);
     function getplatforms($conn){
         $sql = "SELECT * FROM platforms";
 
@@ -166,5 +169,27 @@
             return $result;
         }
         $conn->close();
+    }
+    function addPlatform($conn){
+
+        $name = $_POST['name'];
+        if(!$name){ 
+            sessionGenerator("issue" , "Please Chek Your Platform details ...");
+            header('location: ../platforms.php');die();
+         }
+        else{
+        //SQL INSERT
+            $sql = "INSERT INTO platforms (`name`) VALUES ('$name')";
+
+            if ($conn->query($sql) === TRUE) {
+                sessionGenerator("success" , "Platform has been added successfully !");
+            } else {
+                sessionGenerator("issue" , "Error: " . $sql . "<br>" . $conn->error);
+            }
+        }
+
+                $conn->close();
+        
+		header('location: ../platforms.php');die();
     }
 ?>
