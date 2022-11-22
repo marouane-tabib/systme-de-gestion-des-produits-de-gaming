@@ -26,7 +26,7 @@ $i=0;
                         <td><?php echo $row['description'] ?></td>
                         <td class="column">
                             <div class="mx-auto">
-                                <?php include'includes/components/actionsIcons.php' ?>
+                                <?php include'includes/components/actionsIcons_products.php' ?>
                             </div>
                         </td>
                     </tr>
