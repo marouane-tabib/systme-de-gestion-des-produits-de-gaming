@@ -16,7 +16,6 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="******" min="8" max="50" required>
             </div>
-            <a href="#">Forgot your password?</a><br><br>
             <button type="submit" name="login" class="btn btn-primary col-12">Sign In</button>
           </form>
         </div>
