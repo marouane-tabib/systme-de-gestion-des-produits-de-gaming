@@ -171,7 +171,6 @@
         $conn->close();
     }
     function addPlatform($conn){
-
         $name = $_POST['name'];
         if(!$name){ 
             sessionGenerator("issue" , "Please Chek Your Platform details ...");
@@ -187,9 +186,7 @@
                 sessionGenerator("issue" , "Error: " . $sql . "<br>" . $conn->error);
             }
         }
-
-                $conn->close();
-        
-		header('location: ../platforms.php');die();
+        $conn->close();
+        header('location: ../platforms.php');die();
     }
 ?>
