@@ -47,7 +47,6 @@
         session_destroy();
         header('location:../index.php');die();
     }
-
     function addProduct($conn){
         include"tools/insertImage.php";
 
@@ -77,7 +76,6 @@
         
 		header('location: ../index.php');die();
     }
-
     function getproducts($conn){
             $sql = "SELECT products.* , platforms.name AS platform
                     FROM products 
@@ -90,7 +88,6 @@
             }
             // $conn->close();
     }
-
     function getProduct($conn){
         $id = $_GET['id'];
         $sql = "SELECT products.* , platforms.name AS platform
@@ -105,7 +102,6 @@
         $conn->close();
         return $result;
     }
-
     function updateProduct($conn){
         include"tools/insertImage.php";
         //CODE HERE
@@ -144,7 +140,6 @@
          }
         $conn->close();
     }
-
     function deleteProduct($conn){
         //CODE HERE
             $id = $_POST['delete'];
