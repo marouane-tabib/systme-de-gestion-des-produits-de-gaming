@@ -1,21 +1,14 @@
-
-      <div class="side-bar">
-        <div class="side-box">
-          <div class="side-items">
-            <ul>
-              <li>
-                <a href="#">
-                  <span class="slide-icon"><i class="fa-solid fa-box-open"></i></span>
-                  <span class="side-page">Products</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="slide-icon"><i class="fa-thin fa-camera"></i></span>
-                  <span class="side-page">Images</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+<div class="side-bar-box col-md-2 col-2 bg-white">
+  <div class="row bg-light py-3 px-2 my-2 shadow shadow-sm">
+    <a href="index.php">
+      <span class="icon col-md-3 col-12"><i class="fa fa-lg fa-home"></i></span>
+      <span class="page col">Home</span>
+    </a>
+  </div>
+  <div class="row bg-light py-3 px-2 shadow shadow-sm">
+    <a href="category.php">
+      <span class="icon col-md-3 col-12"><i class="fa-brands fa-lg fa-dribbble"></i></span>
+      <span class="page col">Categories</span>
+    </a>
+  </div>
+  </div>
