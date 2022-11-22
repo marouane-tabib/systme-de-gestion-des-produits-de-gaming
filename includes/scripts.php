@@ -167,7 +167,7 @@
 // Platforms Section... 
     //ROUTING
     if(isset($_POST['saveplatform']))         addPlatform($conn);
-    if(isset($_POST['update_platform']))               updatePlatform($conn);
+    if(isset($_POST['update_platform']))      updatePlatform($conn);
     if(isset($_POST['delete_platform']))      delete_platform($conn);
 
     function getPlatforms($conn){
