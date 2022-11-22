@@ -25,7 +25,7 @@
             <div class="mb-3">
               <label for="platform" class="form-label">Platform</label>
               <select name="platform" id="platform" class="form-control" required>
-                <option value=""></option>
+                <option value="<?= $item['platform_id'] ?>"><?= $item['platform'] ?></option>
               </select>
             </div>
             <div class="mb-3">
