@@ -15,7 +15,7 @@ $i=0;
                 </tr>
             </thead>
             <tbody class="table-group-divider table-responsive">
-                <?php if(isset($data)){ while ($row = $data->fetch_assoc()) { $i++ ?>
+                <?php if(isset($products)){ while ($row = $products->fetch_assoc()) { $i++ ?>
                     <tr>
                         <th class="col-2"><img src="assets/images/products/<?php echo $row['image'] ?>" width="70"></th>
                         <th scope="row"><?php echo $i ?></th>
@@ -30,11 +30,20 @@ $i=0;
                             </div>
                         </td>
                     </tr>
-                <?php }}
-                else { ?>
+                <?php }} elseif(isset($platforms)){ while ($row = $platforms->fetch_assoc()) { $i++ ?>
+                    <tr>
+                        <th scope="row"><?php echo $i ?></th>
+                        <td><?php echo $row['name'] ?></td>
+                        <!-- <td class="column">
+                            <div class="mx-auto">
+                                <?php include'includes/components/actionsIcons.php' ?>
+                            </div>
+                        </td> -->
+                    </tr>
+                <?php }} else {?>
                     <tr>
                         <td colspan="8" class="text-center">No product found</td>
                     </tr>
-              <?php  } ?>
+                <?php  } ?>
             </tbody>
         </table>

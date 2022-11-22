@@ -157,4 +157,14 @@
         }
         $conn->close();
     }
+    function getplatforms($conn){
+        $sql = "SELECT name FROM platforms";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            return $result;
+        }
+        $conn->close();
+    }
 ?>

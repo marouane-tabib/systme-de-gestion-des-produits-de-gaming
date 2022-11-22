@@ -1,11 +1,12 @@
 <?php   
   
     //--- Header include
-    $title = "Categories";
+    $title = "Platforms";
     include"includes/components/header.php";
 
     // Redirect
     if(!isset($_SESSION['user'])){ header('location:login.php'); die(); }
+    $platforms = getplatforms($conn);
 
     //--- Body includes
       include"includes/components/model.php"; 
