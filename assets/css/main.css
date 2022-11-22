@@ -49,3 +49,19 @@ body{
 .bg-light {
   background: #ebebeb !important;
 }
+
+/* Dark Mode */
+html.dark , html.dark img ,html.dark .navbar-brand ,html.dark .btn {
+  filter : invert(1) !important;
+  color:white;
+}
+html.dark #delete-btn , html.dark #update-icon{
+  filter:invert(1);
+}
+*{
+  box-shadow:none !important;
+}
+.shadow{
+  border: .7px solid #9995;
+  box-shadow: 0px 1px 20px #0001 !important;
+}

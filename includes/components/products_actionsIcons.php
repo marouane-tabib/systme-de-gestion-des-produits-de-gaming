@@ -4,7 +4,7 @@
             class="text-danger" id="delete-btn">
                 <i class="fa-solid fa-trash"></i>
         </a>
-        <a href="update.php?id=<?php echo $row["id"]?>" class="text-success">
+        <a href="update.php?id=<?php echo $row["id"]?>" id="update-icon" class="text-success">
             <i class="fa-solid fa-pen-to-square"></i>
         </a>
     </div>
