@@ -150,7 +150,7 @@
         
         if ($conn->query($sql) === TRUE) {
                 $_SESSION['message'] = "Task has been deleted successfully !";
-                $status = unlink('../assets/images/products/'.$selectResult['image']); 
+                unlink('../assets/images/products/'.$selectResult['image']); 
                 header('location: ../index.php');die();
         } else {
             echo "Error deleting record: " . $conn->error;
