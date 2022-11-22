@@ -44,6 +44,7 @@
       .container-box .side-bar-box .row a{
         color: black;
         text-decoration: none;
+        display: contents;
       }
       .container-box .side-bar-box .row .icon{
         display: flex;
