@@ -6,6 +6,7 @@
     //SESSSION IS A WAY TO STORE DATA TO BE USED ACROSS MULTIPLE PAGES
     session_start();
 
+// Products Section...
     //ROUTING
     if(isset($_POST['login']))          login($conn);
     if(isset($_POST['add']))            addProduct($conn);
@@ -13,7 +14,6 @@
     if(isset($_POST['delete']))         deleteProduct($conn);
     if(isset($_POST['logout']))         logout();
 
-// Products Section...
     function login($conn){
         $username = $_POST['username'];
         $password = $_POST['password'];
