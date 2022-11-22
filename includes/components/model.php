@@ -28,9 +28,11 @@
             <div class="mb-3">
               <label for="platform" class="form-label">Platform</label>
               <select name="platform" id="platform" class="form-control" required>
-                <option value="1">Steam</option>
-                <option value="1">Steam</option>
-                <option value="1">Steam</option>
+                <?php if($platforms){ while($platform = $platforms->fetch_assoc()){?>
+                  <option value="<?php echo $platform['id'] ?>"><?php echo $platform['name'] ?></option>
+                <?php }} else{ ?>
+                  <option value="" disabled>-Platforms Not Found-</option>
+                <?php } ?>
               </select>
             </div>
             <div class="mb-3">
