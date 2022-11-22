@@ -158,7 +158,7 @@
         $conn->close();
     }
     function getplatforms($conn){
-        $sql = "SELECT name FROM platforms";
+        $sql = "SELECT * FROM platforms";
 
         $result = $conn->query($sql);
 

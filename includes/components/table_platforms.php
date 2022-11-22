@@ -4,14 +4,9 @@ $i=0;
         <table class="table">
             <thead class="table-dark">
                 <tr>
-                <th scope="col">Image</th>
                 <th scope="col">#</th>
-                <th scope="col">Game Name</th>
-                <th scope="col">QTY</th>
-                <th scope="col">Platform</th>
-                <th scope="col">Price</th>
-                <th scope="col" id="description">Description</th>
-                <th scope="col" id="description">Action</th>
+                <th scope="col">Platforme Name</th>
+                <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider table-responsive">
