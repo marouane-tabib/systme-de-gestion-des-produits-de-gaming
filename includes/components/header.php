@@ -19,7 +19,7 @@
       <?php include'includes/components/nav-bar.php'; ?>
       <div class="content-container flex-row d-flex">
         <?php include'includes/components/sidebar.php'; ?>
-        <div class="content-box col">
+        <div class="content-box col bg-white">
           <section class="container">
 
             <?php if (isset($_SESSION['action'])): ?>
