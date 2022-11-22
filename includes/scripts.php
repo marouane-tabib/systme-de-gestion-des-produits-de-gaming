@@ -165,7 +165,7 @@
     if(isset($_POST['update_platform']))               updatePlatform($conn);
     if(isset($_POST['delete_platform']))      delete_platform($conn);
 
-    function getplatforms($conn){
+    function getPlatforms($conn){
         $sql = "SELECT * FROM platforms";
 
         $result = $conn->query($sql);

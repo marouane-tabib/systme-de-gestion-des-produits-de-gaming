@@ -7,7 +7,7 @@
     // Redirect
     if(!isset($_SESSION['user'])){ header('location:login.php'); die(); }
     $products = getproducts($conn);
-    $platforms = getplatforms($conn);
+    $platforms = getPlatforms($conn);
 
     //--- Body includes
       include"includes/components/model.php"; 
