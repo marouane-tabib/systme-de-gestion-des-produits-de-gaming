@@ -9,7 +9,15 @@
     $platforms = getplatforms($conn);
 
     //--- Body includes
-      include"includes/components/model.php"; 
+?>
+    
+  <form action="includes/scripts.php" method="post">
+    <div class="container float-end my-3 col-12 col-md-4 row">
+        <input type="text" name="platform" class="form-control" placeholder="Add Platform Name ...">
+    </div>
+  </form>
+
+<?php
       include"includes/components/table_platforms.php";
 
     //--- Footer include
