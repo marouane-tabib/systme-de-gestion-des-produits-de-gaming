@@ -104,6 +104,7 @@
         include"tools/insertImage.php";
         //CODE HERE
             $id = $_SESSION['id'];
+            unset($_SESSION['id']);
             $name = $_POST['name'];
             $quantity = $_POST['quantity'];
             $platform_id = $_POST['platform'];
@@ -160,6 +161,7 @@
 
 // Platforms Section... 
     if(isset($_POST['saveplatform']))         addPlatform($conn);
+    if(isset($_POST['update_platform']))               updatePlatform($conn);
     if(isset($_POST['delete_platform']))      delete_platform($conn);
     function getplatforms($conn){
         $sql = "SELECT * FROM platforms";
@@ -189,6 +191,41 @@
         }
         $conn->close();
         header('location: ../platforms.php');die();
+    }
+    function getPlatform($conn){
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM platforms WHERE platforms = '$id'";
+
+        $result = $conn->query($sql);
+        $result = $result->fetch_assoc();
+        
+        $_SESSION['id'] = $id;
+        $conn->close();
+        return $result;
+    }
+
+    function updatePlatform($conn){
+        //CODE HERE
+            $id = $_SESSION['id'];
+            unset($_SESSION['id']);
+            $name = $_POST['name'];
+            
+        if(!$name){ 
+            sessionGenerator("issue" , "No updated recorde , Please try again ...");
+            header('location: ../platforms_update.php?id='.$id);die();
+         }else{
+            //SQL UPDATE
+            $sql = "UPDATE `platforms` SET `name`='$name' WHERE id = '$id'";
+            
+            if ($conn->query($sql) === TRUE) {  
+                sessionGenerator("success" , "Platform has been added successfully !");
+                header('location: ../platforms.php');die();
+            } else {
+                sessionGenerator("issue" , "Error: " . $sql . "<br>" . $conn->error);
+                header('location: ../platforms.php');die();
+            }
+         }
+        $conn->close();
     }
     function delete_platform($conn){
         //CODE HERE
