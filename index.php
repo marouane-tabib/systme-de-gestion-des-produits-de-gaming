@@ -10,7 +10,7 @@
 
     //--- Body includes
       include"includes/components/model.php"; 
-      include"includes/components/table.php";
+      include"includes/components/table_products.php";
 
     //--- Footer include
     include"includes/components/footer.php"

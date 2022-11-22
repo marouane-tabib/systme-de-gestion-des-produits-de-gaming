@@ -30,16 +30,6 @@ $i=0;
                             </div>
                         </td>
                     </tr>
-                <?php }} elseif(isset($platforms)){ while ($row = $platforms->fetch_assoc()) { $i++ ?>
-                    <tr>
-                        <th scope="row"><?php echo $i ?></th>
-                        <td><?php echo $row['name'] ?></td>
-                        <!-- <td class="column">
-                            <div class="mx-auto">
-                                <?php include'includes/components/actionsIcons.php' ?>
-                            </div>
-                        </td> -->
-                    </tr>
                 <?php }} else {?>
                     <tr>
                         <td colspan="8" class="text-center">No product found</td>
