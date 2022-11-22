@@ -87,7 +87,7 @@
             if ($result->num_rows > 0) {
                 return $result;
             }
-            $conn->close();
+            // $conn->close();
     }
 
     function getProduct($conn){
