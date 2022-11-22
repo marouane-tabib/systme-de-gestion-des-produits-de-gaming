@@ -1,6 +1,6 @@
 <?php
     $title ="Update Platform"; include"includes/components/header.php" ;
-    $item = getProduct($conn);
+    $item = getPlatform($conn);
     if(!isset($_SESSION['user'])){ header('location:login.php'); die(); }
 ?>
         <div class="card-box container my-2 mx-auto p-3 shadow shadow-md align-item-center bg-white">

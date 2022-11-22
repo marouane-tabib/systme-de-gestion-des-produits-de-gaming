@@ -194,7 +194,7 @@
     }
     function getPlatform($conn){
         $id = $_GET['id'];
-        $sql = "SELECT * FROM platforms WHERE platforms = '$id'";
+        $sql = "SELECT * FROM platforms WHERE id = '$id'";
 
         $result = $conn->query($sql);
         $result = $result->fetch_assoc();
@@ -212,7 +212,7 @@
             
         if(!$name){ 
             sessionGenerator("issue" , "No updated recorde , Please try again ...");
-            header('location: ../platforms_update.php?id='.$id);die();
+            header('location: ../update_platform.php?id='.$id);die();
          }else{
             //SQL UPDATE
             $sql = "UPDATE `platforms` SET `name`='$name' WHERE id = '$id'";
