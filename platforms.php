@@ -19,7 +19,7 @@
   </form>
 
 <?php
-      include"includes/components/table_platforms.php";
+      include"includes/components/platforms_table.php";
 
     //--- Footer include
     include"includes/components/footer.php"

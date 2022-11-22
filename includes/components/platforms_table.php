@@ -16,7 +16,7 @@ $i=0;
                         <td><?php echo $row['name'] ?></td>
                         <td class="column">
                             <div class="mx-auto">
-                                <?php include'includes/components/actionsIcons_platforms.php' ?>
+                                <?php include'includes/components/platforms_actionsIcons.php' ?>
                             </div>
                         </td>
                     </tr>
