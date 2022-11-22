@@ -13,6 +13,7 @@
     if(isset($_POST['delete']))         deleteProduct($conn);
     if(isset($_POST['logout']))         logout();
 
+// Products Section...
     function login($conn){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -210,7 +211,6 @@
         $conn->close();
         return $result;
     }
-
     function updatePlatform($conn){
         //CODE HERE
             $id = $_SESSION['id'];
