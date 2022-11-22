@@ -11,9 +11,16 @@
             </a>
 
             <ul class="dropdown-menu end-0" style="left:inherit">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <?php if(isset($_SESSION['user'])){ ?>
+              <li><a class="dropdown-item desible" href="#"><?= $_SESSION['user'] ?></a></li>
+              <li>
+                <form action="includes/scripts.php" method="post">
+                  <input type="submit" value="Log Out" name="logout" class="dropdown-item">
+                </form>
+              </li>
+              <?php } else {?>
+                <li><a class="dropdown-item" href="login.php">Login Now</a></li>
+              <?php } ?>
             </ul>
 
           </div>

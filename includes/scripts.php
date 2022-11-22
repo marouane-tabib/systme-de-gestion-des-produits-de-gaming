@@ -11,6 +11,7 @@
     if(isset($_POST['add']))            addProduct($conn);
     if(isset($_POST['update']))         updateProduct($conn);
     if(isset($_POST['delete']))         deleteProduct($conn);
+    if(isset($_POST['logout']))         logout();
 
     function login($conn){
         $username = $_POST['username'];
@@ -29,7 +30,7 @@
     
             if ($result->num_rows > 0) {
                 sessionGenerator();
-                $_SESSION['user'] = true;
+                $_SESSION['user'] = $username;
                 header("location:../index.php");
             } else {
                 sessionGenerator("issue" , "No recorde register , check your password or username");
@@ -38,8 +39,12 @@
             $conn->close();
         }else{
             sessionGenerator("issue" , "Please check your information");
-            header("location:../login.php");
+            header("location:../login.php");die();
         }
+    }
+    function logout(){
+        session_destroy();
+        header('location:../index.php');die();
     }
 
     function addProduct($conn){
