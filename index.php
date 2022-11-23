@@ -9,7 +9,7 @@
     $products = getproducts($conn);
     $platforms = getPlatforms($conn);
 
-    include'includes/components/statistique.php';
+    include'includes/components/statistique.php'; 
     //--- Body includes
       include"includes/components/model.php"; 
       include"includes/components/products_table.php";
