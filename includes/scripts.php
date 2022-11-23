@@ -151,7 +151,7 @@
             $sql = "DELETE FROM `products` WHERE id=$id";
         
         if ($conn->query($sql) === TRUE) {
-                $_SESSION['message'] = "Task has been deleted successfully !";
+                sessionGenerator("success" , "Product has been deleted successfully !");
                 unlink('../assets/images/products/'.$selectResult['image']); 
                 header('location: ../index.php');die();
         } else {
@@ -236,7 +236,7 @@
             $sql = "DELETE FROM `platforms` WHERE id = '$id' ";
 
         if ($conn->query($sql) === TRUE) {
-                $_SESSION['message'] = "Task has been deleted successfully !";
+                sessionGenerator("success" , "Platform has been deleted successfully !");
                 header('location: ../platforms.php');die();
         } else {
             echo "Error deleting record: " . $conn->error;
