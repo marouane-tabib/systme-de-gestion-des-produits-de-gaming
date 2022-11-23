@@ -99,8 +99,8 @@
         $result = $result->fetch_assoc();
         
         $_SESSION['id'] = $id;
-        $conn->close();
         return $result;
+        // $conn->close();
     }
     function updateProduct($conn){
         include"tools/insertImage.php";

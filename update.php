@@ -1,6 +1,7 @@
 <?php
     $title ="Update"; include"includes/components/header.php" ;
     $item = getProduct($conn);
+    $platforms = getPlatforms($conn);
     if(!isset($_SESSION['user'])){ header('location:login.php'); die(); }
 ?>
         <div class="card-box container my-2 mx-auto p-3 shadow shadow-md align-item-center bg-white">
@@ -25,7 +26,11 @@
             <div class="mb-3">
               <label for="platform" class="form-label">Platform</label>
               <select name="platform" id="platform" class="form-control" required>
-                <option value="<?= $item['platform_id'] ?>"><?= $item['platform'] ?></option>
+                <?php if($platforms){ while($platform = $platforms->fetch_assoc()){?>
+                  <option value="<?php echo $platform['id'] ?>" <?php if($item['platform_id'] == $platform['id']){ echo 'selected'; } ?>><?php echo $platform['name'] ?></option>
+                <?php }} else{ ?>
+                  <option value="" disabled>-Platforms Not Found-</option>
+                <?php } ?>
               </select>
             </div>
             <div class="mb-3">
