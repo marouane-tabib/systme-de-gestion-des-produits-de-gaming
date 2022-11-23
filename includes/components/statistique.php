@@ -34,7 +34,7 @@
                 <i class="<?= $card['class_icon'] ?>"></i>
                 </span>
                 <span class="calc-sum">
-                <?php $result = calc($conn , $card['action'] , $card['target']); echo $result['calc'] ?>
+                <?php $result = calc($conn , $card['action'] , $card['target']); echo $result['calc']?: '---' ?>
                 </span>
             </div>
         <?php } ?>
