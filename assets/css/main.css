@@ -6,6 +6,7 @@ body{
   flex-direction: column;
   height: 100vh;
   background-color: green; 
+  /* overflow-wrap: anywhere; */
 }
 .container-box .content-container{
   background-color: goldenrod;

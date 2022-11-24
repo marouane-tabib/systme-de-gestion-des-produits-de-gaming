@@ -1,6 +1,7 @@
 <?php 
 $i=0;
 ?>
+<div class="col-12" style="overflow:auto">
         <table class="table">
             <thead class="table-dark">
                 <tr>
@@ -37,3 +38,4 @@ $i=0;
                 <?php  } ?>
             </tbody>
         </table>
+</div>
