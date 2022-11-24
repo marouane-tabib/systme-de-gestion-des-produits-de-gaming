@@ -1,5 +1,6 @@
 <?php 
     include('includes/tools/calc.php');
+    //  hena derete object li fihe title o class icon ... , kol
     $statistique = [
         [
             "title" => "Sum Price",
